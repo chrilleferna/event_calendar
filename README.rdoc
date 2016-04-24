@@ -8,8 +8,11 @@ After install, the "calendar" method will be available within your views.
 
 To customize the look, modify the included stylesheet and/or change the default options.
 
+This branch includes a minimal change to make it (fully?) compatible with Rails 4.2
+
 
 ==Install
+
 
 === Rails 2
 
@@ -19,7 +22,7 @@ To generate the necessary static files AND the example below:
 
   script/generate event_calendar
 
-=== Rails 3
+=== Rails 3 and Rails 4
 
 As a gem:
 
@@ -29,7 +32,7 @@ Add this to your Gemfile:
   
   gem 'event-calendar', :require => 'event_calendar'
   
-Or as a plugin:
+Or as a plugin: (Rails 3)
 
   rails plugin install git://github.com/elevation/event_calendar.git
 

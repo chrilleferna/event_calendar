@@ -56,6 +56,12 @@ module EventCalendar
       )
     end
     
+    def events_for_date_range(start_d, end_d, find_options = {})
+      # Changed find to whhere and order by Christer for Rails 4
+      self.where("(? <= #{self.end_at_field}) AND (#{self.start_at_field}< ?)", start_d.to_time.utc, end_d.to_time.utc).order("#{self.start_at_field} ASC")
+    end
+
+    
     # Create the various strips that show events.
     def create_event_strips(strip_start, strip_end, events)
       # create an inital event strip, with a nil entry for every day of the displayed days
